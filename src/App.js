@@ -4,8 +4,8 @@ import ProductList from './ProductList';
 import { Container, Row, Col } from "reactstrap";
 
 function App() {
-  let titleProduct="Product List"
-  let titlecategory="Category List"
+  let productInfo={title:"ProductList"}
+  let categoryInfo={title:"CategoryList"}
   return (
     <div>
       <Container>
@@ -14,10 +14,10 @@ function App() {
         </Row>
         <Row>
           <Col xs="3">
-            <CategoryList title={titlecategory} />
+            <CategoryList info={categoryInfo} />
           </Col>
           <Col xs="9">
-            <ProductList title={titleProduct} />
+            <ProductList info={productInfo} />
           </Col>
         </Row>
       </Container>
