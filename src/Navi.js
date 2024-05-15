@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Collapse,
   Navbar,
@@ -7,40 +7,37 @@ import {
   Nav,
   NavItem,
   NavLink,
-} from 'reactstrap';
-import CartSummarly from './CartSummarly';
-
-export default class Navi extends React.Component{
-  constructor(props){
-    super(props);
-
-    this.toggle=this.toggle.bind(this);
-    this.state={
-      isOpen:false
-    };
-  }
-  toggle(){
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  }
-  render(){
+} from "reactstrap";
+import CarSummary from "./CarSummary";
+import { Link } from "react-router-dom";
+ 
+export default class Navi extends React.Component {
+  render() {
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">Northwind App</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+          <NavbarBrand href="/">reactstrap</NavbarBrand>
+          <NavbarToggler />
+          <Collapse navbar>
+            <Nav className="ms-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">Components</NavLink>
+                <NavLink>
+
+                <Link to={"form1"}>Form 1</Link>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink>
+
+                <Link to={"form2"}>Form 2</Link>
+                </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="https://github.com/reactstrap/reactstrap">
-                  GitHub
+                  GitHub 
                 </NavLink>
               </NavItem>
-              <CartSummarly removeFromCart={this.props.removeFromCart} cart={this.props.cart} />
+              <CarSummary removeFromCart={this.props.removeFromCart} cart={this.props.cart}/>
             </Nav>
           </Collapse>
         </Navbar>
