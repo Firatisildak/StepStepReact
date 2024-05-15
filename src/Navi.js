@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Collapse,
   Navbar,
@@ -7,11 +7,8 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
 } from 'reactstrap';
+import CartSummarly from './CartSummarly';
 
 export default class Navi extends React.Component{
   constructor(props){
@@ -43,17 +40,7 @@ export default class Navi extends React.Component{
                   GitHub
                 </NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options-{this.props.cart.length}
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>Option 1</DropdownItem>
-                  <DropdownItem>Option 2</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Reset</DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
+              <CartSummarly cart={this.props.cart} />
             </Nav>
           </Collapse>
         </Navbar>
